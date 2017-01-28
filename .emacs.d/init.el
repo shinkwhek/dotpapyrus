@@ -95,3 +95,16 @@
 ;; ---- ---- Coq ---- ---- ;;
 ;; ---- ---- Proof ---- ---- ;;
 (load "~/.emacs.d/lisp/PG/generic/proof-site")
+
+;; ---- ---- OCaml ---- ---- ;;
+(when (require 'package)
+  (add-to-list
+   'package-archives
+   '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  (package-initialize))
+
+(setq opam-share
+      (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
+(add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
+
+(require 'utop)
