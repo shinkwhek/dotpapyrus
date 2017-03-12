@@ -7,6 +7,7 @@ set encoding=UTF-8
 set fileencoding=UTF-8
 set termencoding=UTF-8
 
+set noundofile
 " ---- ---- NOT beep ---- ----
 set vb t_vb=
 

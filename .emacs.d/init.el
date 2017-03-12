@@ -37,6 +37,9 @@
 ;; --- --- current line highlighted --- --- ;;
 (global-hl-line-mode 1)
 
+;; ---- ---- indent ---- ---- ;;
+(setq default-tab-width 4)
+
 ;; --- --- balanced paren shown --- --- ;;
 (show-paren-mode 1)
 
