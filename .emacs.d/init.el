@@ -43,6 +43,9 @@
 ;; --- --- balanced paren shown --- --- ;;
 (show-paren-mode 1)
 
+;; --- --- back --- --- ;;
+(define-key global-map [?¥] [?\\]) 
+
 ;; --- --- line & column number displayed --- --- ;;
 (line-number-mode 1)
 (column-number-mode 1)
