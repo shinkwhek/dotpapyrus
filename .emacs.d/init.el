@@ -94,6 +94,12 @@
 (setq ac-use-menu-map t)
 (setq ac-use-fuzzy t)
 
+;; ---- ---- helm ---- ---- ;;
+(require 'helm)
+(helm-mode 1)
+(define-key global-map (kbd "M-x") 'helm-M-x)
+(define-key global-map (kbd "C-x C-f") 'helm-find-files)
+
 ;; ==== ==== ==== Languages ==== ==== ==== ;;
 
 ;; ---- ---- Coq ---- ---- ;;
