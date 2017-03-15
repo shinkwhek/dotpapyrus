@@ -76,14 +76,6 @@
 (require 'shkw-c)
 (require 'shkw-ocaml)
 
-;; ==== ==== ==== Company ==== ==== ==== ;;
-;; ---- ---- initial ---- ---- ;;
-(add-hook 'after-init-hook 'global-company-mode)
-;(global-company-mode +1)
-
-
-;; ---- ---- company color ---- ---- ;;
-
 ;; ---- ---- template ---- ---- ;;
 (auto-insert-mode)
 (setq-default auto-insert-directory "~/.emacs.d/Template/")
@@ -92,7 +84,15 @@
 ;; ---- ---- package ---- ---- ;;
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
+
+;; ---- ---- auto-complete ---- ---- ;;
+(require 'auto-complete-config)
+(ac-config-default)
+(ac-set-trigger-key "TAB")
+(setq ac-use-menu-map t)
+(setq ac-use-fuzzy t)
 
 ;; ==== ==== ==== Languages ==== ==== ==== ;;
 
