@@ -19,7 +19,8 @@
 ;;
 ;; === === === USER INTERFACE === === === ;;
 ;; --- --- tool bar & menu bar are hidden --- --- ;;
-(tool-bar-mode -1)
+(if window-system
+	(tool-bar-mode -1))
 (menu-bar-mode -1)
 ;; --- --- font --- --- ;;
 (let ((ws window-system))
@@ -51,7 +52,8 @@
 (column-number-mode 1)
 
 ;; scroll bar hidden
-(set-scroll-bar-mode nil)
+(if window-system
+	(set-scroll-bar-mode nil))
 
 ;; line number displayed
 (global-linum-mode t)
