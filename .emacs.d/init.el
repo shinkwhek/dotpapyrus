@@ -33,6 +33,9 @@
 ;; --- --- current line highlighted --- --- ;;
 (global-hl-line-mode 1)
 
+;; --- --- stop Flashing cursor --- ---
+(blink-cursor-mode 0)
+
 ;; ---- ---- indent ---- ---- ;;
 (setq default-tab-width 4)
 
@@ -40,7 +43,10 @@
 (show-paren-mode 1)
 
 ;; --- --- back --- --- ;;
-(define-key global-map [?¥] [?\\]) 
+(define-key global-map [?¥] [?\\])
+
+;; --- --- Scroll line by line --- --- ;;
+(setq scroll-conservatively 1)
 
 ;; --- --- line & column number displayed --- --- ;;
 (line-number-mode 1)
@@ -68,9 +74,6 @@
 (add-to-list 'custom-theme-load-path
              (file-name-as-directory "~/.emacs.d/elisp/themes/"))
 (load-theme 'meacupla t)
-;; ---- ---- background ---- ---- ;;
-;;(set-face-background 'default "#303030")
-;;(set-face-foreground 'default "#f0f0f0")
 
 ;;; === === === Package === === === ;;;
 (add-to-list 'load-path "~/.emacs.d/funs")
