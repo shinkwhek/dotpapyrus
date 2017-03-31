@@ -9,11 +9,6 @@
 (add-to-list 'auto-mode-alist '("\\.tex$" . shkw-latex-mode))
 (add-to-list 'auto-mode-alist '("\\.ltx$" . shkw-latex-mode))
 (add-to-list 'auto-mode-alist '("\\.sty$" . shkw-latex-mode))
-;; ---- ---- C/C++ ---- ---- ;;
-(add-to-list 'auto-mode-alist '("\\.c$"   . shkw-c-mode))
-(add-to-list 'auto-mode-alist '("\\.h$"   . shkw-c-mode))
-(add-to-list 'auto-mode-alist '("\\.cpp$" . shkw-c-mode))
-(add-to-list 'auto-mode-alist '("\\.hpp$" . shkw-c-mode))
 ;; ---- ---- SML ---- ---- ;;
 (add-to-list 'auto-mode-alist '("\\.sml$" . sml-mode))
 ;;
@@ -70,16 +65,19 @@
 (setq auto-save-default nil)
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
+(add-to-list 'custom-theme-load-path
+             (file-name-as-directory "~/.emacs.d/elisp/themes/"))
+(load-theme 'meacupla t)
 ;; ---- ---- background ---- ---- ;;
-(set-face-background 'default "#303030")
-(set-face-foreground 'default "#f0f0f0")
+;;(set-face-background 'default "#303030")
+;;(set-face-foreground 'default "#f0f0f0")
 
 ;;; === === === Package === === === ;;;
 (add-to-list 'load-path "~/.emacs.d/funs")
 (require 'shkw)
 (require 'shkw-latex)
-(require 'shkw-c)
 (require 'shkw-ocaml)
+(require 'shkw-lisp)
 
 ;; ---- ---- template ---- ---- ;;
 (auto-insert-mode)
