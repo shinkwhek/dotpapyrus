@@ -71,9 +71,7 @@
 (setq auto-save-default nil)
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
-(add-to-list 'custom-theme-load-path
-             (file-name-as-directory "~/.emacs.d/elisp/themes/"))
-(load-theme 'meacupla t)
+(load-theme 'tango-dark t)
 
 ;;; === === === Package === === === ;;;
 (add-to-list 'load-path "~/.emacs.d/funs")
@@ -94,7 +92,6 @@
 (package-initialize)
 
 ;; ---- ---- auto-complete ---- ---- ;;
-(require 'auto-complete-config)
 (ac-config-default)
 (ac-set-trigger-key "TAB")
 (setq ac-use-menu-map t)
