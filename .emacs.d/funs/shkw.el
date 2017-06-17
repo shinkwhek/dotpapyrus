@@ -37,7 +37,7 @@
    (let ((bf (file-name-extension (buffer-file-name))))
      (cond
       ((thereis-obj-in-list bf '("v"))
-       (format "(* ---- ---- %s ---- ---- *)\n" sgSubTitle))
+       (format "(* ---- ---- %s ---- ---- *)\n" agSubTitle))
       ((thereis-obj-in-list bf '("el" "lisp"))
        (format ";; ---- ---- %s ---- ---- ;;\n" agSubTitle))
       ((thereis-obj-in-list bf '("c" "h" "cpp" "hpp"))

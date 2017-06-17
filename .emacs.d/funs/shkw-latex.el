@@ -57,7 +57,7 @@
   (interactive "sEnvName: ")
   (progn
     (insert (format "\\begin{%s}\n \n\\end{%s}" envName envName))
-    (goto-line (- (line-number-at-pos) 1))))
+    (forward-line (- (line-number-at-pos) 1))))
 ;; ---- ---- shkw-insert-brackets ---- ---- ;;
 (defun shkw-insert-brackets ()
   (interactive)

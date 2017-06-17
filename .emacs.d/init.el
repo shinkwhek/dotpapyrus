@@ -1,7 +1,7 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
+(setq buffer-file-coding-system 'utf-8)
 (setq file-name-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 ;; ==== ==== ==== FileType ==== ==== ==== ;;
@@ -37,7 +37,7 @@
 (blink-cursor-mode 0)
 
 ;; ---- ---- indent ---- ---- ;;
-(setq default-tab-width 4)
+(setq tab-width 2)
 
 ;; --- --- balanced paren shown --- --- ;;
 (show-paren-mode 1)
