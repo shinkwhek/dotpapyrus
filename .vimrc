@@ -1,6 +1,5 @@
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
+set fileencodings=utf-8
 
 "dein Scripts-----------------------------
 
@@ -9,15 +8,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/shinkwhek/.vim/bundle//repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.vim/bundle//repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/shinkwhek/.vim/bundle/')
-	call dein#begin('/Users/shinkwhek/.vim/bundle/')
+if dein#load_state('~/.vim/bundle/')
+	call dein#begin('~/.vim/bundle/')
 
 	" Let dein manage dein
 	" Required:
-	call dein#add('/Users/shinkwhek/.vim/bundle//repos/github.com/Shougo/dein.vim')
+	call dein#add('~/.vim/bundle//repos/github.com/Shougo/dein.vim')
 
 	" Add or remove your plugins here:
 	call dein#add('Shougo/neosnippet.vim')
@@ -55,3 +54,13 @@ let g:molokai_original = 1
 
 " ==== ==== neocomplete ==== ====
 let g:neocomplete#enable_at_startup = 1
+
+
+" ==== ==== ==== BASIC ==== ==== ====
+" indent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set smartindent
