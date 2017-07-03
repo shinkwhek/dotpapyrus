@@ -67,3 +67,6 @@ set smartindent
 
 " delete key
 set backspace=indent,eol,start
+
+" key
+inoremap <silent> jj <ESC>
