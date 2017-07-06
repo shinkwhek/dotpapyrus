@@ -22,6 +22,7 @@ if dein#load_state('~/.vim/bundle/')
 	call dein#add('Shougo/neosnippet.vim')
 	call dein#add('Shougo/neosnippet-snippets')
 	call dein#add('Shougo/neocomplete.vim')
+  call dein#add('Shougo/vinarise.vim')
 	call dein#add('itchyny/lightline.vim')
 
 	" You can specify revision/branch/tag.
