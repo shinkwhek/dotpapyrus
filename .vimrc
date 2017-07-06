@@ -34,6 +34,7 @@ if dein#load_state('~/.vim/bundle/')
 endif
 
 " Required:
+syntax on
 filetype plugin indent on
 syntax enable
 
