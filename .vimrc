@@ -4,7 +4,7 @@ set fileencodings=utf-8
 "dein Scripts-----------------------------
 
 if &compatible
-	set nocompatible               " Be iMproved
+  set nocompatible               " Be iMproved
 endif
 
 " Required:
@@ -12,25 +12,25 @@ set runtimepath+=~/.vim/bundle//repos/github.com/Shougo/dein.vim
 
 " Required:
 if dein#load_state('~/.vim/bundle/')
-	call dein#begin('~/.vim/bundle/')
+  call dein#begin('~/.vim/bundle/')
 
-	" Let dein manage dein
-	" Required:
-	call dein#add('~/.vim/bundle//repos/github.com/Shougo/dein.vim')
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.vim/bundle//repos/github.com/Shougo/dein.vim')
 
-	" Add or remove your plugins here:
-	call dein#add('Shougo/neosnippet.vim')
-	call dein#add('Shougo/neosnippet-snippets')
-	call dein#add('Shougo/neocomplete.vim')
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/neocomplete.vim')
   call dein#add('Shougo/vinarise.vim')
-	call dein#add('itchyny/lightline.vim')
+  call dein#add('itchyny/lightline.vim')
 
-	" You can specify revision/branch/tag.
-	call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  " You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-	" Required:
-	call dein#end()
-	call dein#save_state()
+  " Required:
+  call dein#end()
+  call dein#save_state()
 endif
 
 " Required:
@@ -72,3 +72,10 @@ set backspace=indent,eol,start
 
 " key
 inoremap <silent> jj <ESC>
+
+" for OCaml
+" ---- ocp-indent
+set rtp^="/home/vagrant/.opam/system/share/ocp-indent/vim"
+" ---- merlin
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
