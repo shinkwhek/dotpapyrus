@@ -1,4 +1,4 @@
-#!/bin/bash
+# should use zsh
 
 echo -e "\e[31;1;4mset zshrc\e[m"
 cp ./.zshrc ~/
