@@ -19,11 +19,12 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('~/.vim/bundle//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
+  call dein#add('w0ng/vim-hybrid')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('Shougo/vinarise.vim')
-  call dein#add('itchyny/lightline.vim')
+  call dein#add('vim-airline/vim-airline')
   call dein#add('mattn/emmet-vim')
 
   " You can specify revision/branch/tag.
@@ -46,14 +47,10 @@ endif
 
 "End dein Scripts-------------------------
 
-" ==== ==== lightline.vim ==== ====
-set laststatus=2
-if !has('gui_running')
-  set t_Co=256
-endif
 
-" ==== ==== molokai ==== ====
-let g:molokai_original = 1
+set laststatus=2
+set background=dark
+colorscheme hybrid
 
 " ==== ==== neocomplete ==== ====
 let g:neocomplete#enable_at_startup = 1
