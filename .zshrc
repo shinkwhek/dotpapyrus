@@ -29,7 +29,7 @@ zplug "mollifier/anyframe", at:4c23cb60
 zplug "~/.zsh", from:local
 
 # Load theme file
-zplug 'dracula/zsh', as:theme
+zplug 'oskarkrawczyk/honukai-iterm-zsh', as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
