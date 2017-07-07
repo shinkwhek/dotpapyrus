@@ -41,3 +41,17 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
+
+# ---- ---- ---- BASIC ---- ---- ----
+#
+# alias
+#
+alias la='ls -a'
+alias lla='ls -la'
+alias gst='git status'
+alias glg='git log'
+alias gad='git add'
+alias gcm='git commit'
+alias nyao='git'
+alias oppai='git'
+
