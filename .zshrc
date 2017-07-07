@@ -31,9 +31,6 @@ zplug "~/.zsh", from:local
 # Load theme file
 zplug 'dracula/zsh', as:theme
 
-# emoji
-zplug "b4b4r07/emoji-cli"
-
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
