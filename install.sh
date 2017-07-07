@@ -18,11 +18,11 @@ if [ -d ~/.vim/bundle ]; then
 else  
   echo -e "\e[31;1mcreate ~/.vim/bundle\e[m"
   mkdir -p ~/.vim/bundle
+
+  echo -e "\e[32;1mInstall\e[m \e[37;1;4mdein\e[m"
+  curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+  sh ./installer.sh ~/.vim/bundle
+
+  echo -e "\e[36;1mClean~~~\e[m"
+  rm ./installer.sh
 fi
-
-echo -e "\e[32;1mInstall\e[m \e[37;1;4mdein\e[m"
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/.vim/bundle
-
-echo -e "\e[36;1mClean~~~\e[m"
-	rm ./installer.sh
