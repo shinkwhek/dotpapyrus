@@ -2,9 +2,9 @@
 
 papyrus...? :skull: :skull: :skull: :skull: :skull:
 
-## This is a dotfile
+### This is a dotfile
 
-### Requirements
+## Requirements
 
 + zsh : version 4.3.9 or higher
 
@@ -12,11 +12,11 @@ papyrus...? :skull: :skull: :skull: :skull: :skull:
 
 + Vim
 
-### Installation
+## Installation
 
 1. Install zsh
 
-2. run install.sh on zsh
+2. run install.sh **on zsh**
 
 ```shell
 $ sh ./install.sh
@@ -28,6 +28,14 @@ real install zplug plugin & dein (vim)
 
 ```shell
 $ zsh
-
+```
+```shell
 $ vim
-``
+```
+## Update
+
+run update.sh
+
+```shell
+$ sh ./update.sh
+```
