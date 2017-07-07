@@ -24,6 +24,7 @@ if dein#load_state('~/.vim/bundle/')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('Shougo/vinarise.vim')
   call dein#add('itchyny/lightline.vim')
+  call dein#add('mattn/emmet-vim')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
