@@ -2,11 +2,11 @@
 
 CMDNAME=`basename $0`
 
-while getopts v:z: OPT
+while getopts vz OPT
 do
   case $OPT in
-    "v") FLG_V = "TRUE" ;;
-    "z") FLG_Z = "TRUE" ;;
+    "v" ) FLG_V="TRUE" ;;
+    "z" ) FLG_Z="TRUE" ;;
      * )  echo "USEGE: $CMDNAME [-v] [-z]" 1>&2
           exit 1 ;;
   esac
