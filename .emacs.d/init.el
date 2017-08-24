@@ -1,22 +1,13 @@
+;; Format
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-buffer-file-coding-system 'utf-8)
 (setq buffer-file-coding-system 'utf-8)
 (setq file-name-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
-;; ==== ==== ==== FileType ==== ==== ==== ;;
-;; ---- ---- TeX , LaTeX ---- ---- ;;
-(add-to-list 'auto-mode-alist '("\\.tex$" . shkw-latex-mode))
-(add-to-list 'auto-mode-alist '("\\.ltx$" . shkw-latex-mode))
-(add-to-list 'auto-mode-alist '("\\.sty$" . shkw-latex-mode))
-;; ---- ---- SML ---- ---- ;;
-(add-to-list 'auto-mode-alist '("\\.sml$" . sml-mode))
-;;
 ;; === === === USER INTERFACE === === === ;;
-;; --- --- tool bar & menu bar are hidden --- --- ;;
-(if window-system
-	(tool-bar-mode -1))
-(menu-bar-mode -1)
+(tool-bar-mode -1) ;; tool bar are hidden
+(menu-bar-mode -1) ;; menu bar are hidden
 ;; --- --- font --- --- ;;
 (let ((ws window-system))
   (cond ((eq ws 'w32)
@@ -26,7 +17,7 @@
 	 (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Meiryo UI")))
 	((eq ws 'ns)
 	 (set-face-attribute 'default nil
-			     :family "Monaco"
+			     :family "Consolas"
 			     :height 130)
 	 (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Osaka")))))
 
@@ -71,7 +62,7 @@
 (setq auto-save-default nil)
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
-(load-theme 'tango-dark t)
+(load-theme 'misterioso t)
 
 ;;; === === === Package === === === ;;;
 (add-to-list 'load-path "~/.emacs.d/funs")
@@ -104,11 +95,15 @@
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
 
 ;; ==== ==== ==== Languages ==== ==== ==== ;;
-
 ;; ---- ---- Coq ---- ---- ;;
 ;; ---- ---- Proof ---- ---- ;;
 (load "~/.emacs.d/lisp/PG/generic/proof-site")
-
-
 ;; ---- ---- yatex ---- ---- ;;
 (add-to-list 'load-path "~/.emacs.d/site-lisp/yatex")
+;; ---- ---- TeX , LaTeX ---- ---- ;;
+(add-to-list 'auto-mode-alist '("\\.tex$" . shkw-latex-mode))
+(add-to-list 'auto-mode-alist '("\\.ltx$" . shkw-latex-mode))
+(add-to-list 'auto-mode-alist '("\\.sty$" . shkw-latex-mode))
+;; ---- ---- SML ---- ---- ;;
+(add-to-list 'auto-mode-alist '("\\.sml$" . sml-mode))
+;;
