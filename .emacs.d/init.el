@@ -9,17 +9,11 @@
 (tool-bar-mode -1) ;; tool bar are hidden
 (menu-bar-mode -1) ;; menu bar are hidden
 ;; --- --- font --- --- ;;
-(let ((ws window-system))
-  (cond ((eq ws 'w32)
-	 (set-face-attribute 'default nil
-			     :family "Consolas"
-			     :height 130)
-	 (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Meiryo UI")))
-	((eq ws 'ns)
-	 (set-face-attribute 'default nil
-			     :family "Consolas"
-			     :height 130)
-	 (set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Osaka")))))
+(let ((ws system-type))
+  (cond
+    ((equal ws 'w32)    (add-to-list 'default-frame-alist '(font . "Consolas")))
+    ((equal ws 'ns)     (add-to-list 'default-frame-alist '(font . "Consolas")))
+    ((equal ws 'darwin) (add-to-list 'default-frame-alist '(font . "ricty-16")))))
 
 ;; --- --- current line highlighted --- --- ;;
 (global-hl-line-mode 1)
@@ -29,9 +23,6 @@
 
 ;; ---- ---- indent ---- ---- ;;
 (setq tab-width 2)
-
-;; --- --- balanced paren shown --- --- ;;
-(show-paren-mode 1)
 
 ;; --- --- back --- --- ;;
 (define-key global-map [?¥] [?\\])
@@ -45,7 +36,7 @@
 
 ;; scroll bar hidden
 (if window-system
-	(set-scroll-bar-mode nil))
+  (set-scroll-bar-mode nil))
 
 ;; line number displayed
 (global-linum-mode t)
@@ -62,7 +53,7 @@
 (setq auto-save-default nil)
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
-(load-theme 'misterioso t)
+(load-theme 'adwaita t)
 
 ;;; === === === Package === === === ;;;
 (add-to-list 'load-path "~/.emacs.d/funs")
@@ -77,19 +68,45 @@
 (define-auto-insert "\\.tex$" "shkw-latex-template.tex")
 
 ;; ---- ---- package ---- ---- ;;
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-(package-initialize)
+(require 'package) ;; You might already have this line
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (url (concat (if no-ssl "http" "https") "://melpa.org/packages/")))
+  (add-to-list 'package-archives (cons "melpa" url) t))
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize) ;; You might already have this line
+
+;; ---- ---- powerline ---- ---- ;;
+(require 'powerline)
+(powerline-center-theme)
 
 ;; ---- ---- auto-complete ---- ---- ;;
 (ac-config-default)
 (ac-set-trigger-key "TAB")
+(global-auto-complete-mode t)
 (setq ac-use-menu-map t)
 (setq ac-use-fuzzy t)
 
+;; ---- ---- rainbow ---- ---- ;;
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+;; param color
+(require 'cl-lib)
+(require 'color)
+(defun rainbow-delimiters-using-stronger-colors ()
+  (interactive)
+  (cl-loop
+   for index from 1 to rainbow-delimiters-max-face-count
+   do
+   (let ((face (intern (format "rainbow-delimiters-depth-%d-face" index))))
+    (cl-callf color-saturate-name (face-foreground face) 30))))
+(add-hook 'emacs-startup-hook 'rainbow-delimiters-using-stronger-colors)
+
 ;; ---- ---- helm ---- ---- ;;
 (require 'helm)
+(require 'helm-config)
 (helm-mode 1)
 (define-key global-map (kbd "M-x") 'helm-M-x)
 (define-key global-map (kbd "C-x C-f") 'helm-find-files)
@@ -107,3 +124,15 @@
 ;; ---- ---- SML ---- ---- ;;
 (add-to-list 'auto-mode-alist '("\\.sml$" . sml-mode))
 ;;
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (powerline rainbow-delimiters helm auto-complete))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -9,12 +9,6 @@
 
 ;; 対応する括弧を表示する
 (show-paren-mode t)
-;; 括弧の補完
-(global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-(setq skeleton-pair 1)
 
 ;; emacsでGauche
 (setq process-coding-system-alist
