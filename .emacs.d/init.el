@@ -53,7 +53,6 @@
 (setq auto-save-default nil)
 
 ;;; === === === Package === === === ;;;
-(add-to-list 'load-path "~/.emacs.d/elisp") 
 (add-to-list 'load-path "~/.emacs.d/funs")
 (require 'shkw)
 (require 'shkw-latex)
@@ -87,8 +86,9 @@
 (powerline-center-theme)
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
-(load-theme 'green-phosphor t)
-;;(load-theme 'base16-default-dark t)
+(if window-system (load-theme 'green-phosphor t))
+(if (not window-system)
+    (progn (load-theme 'base16-default-dark t)))
 
 ;; ---- ---- auto-complete ---- ---- ;;
 (ac-config-default)
