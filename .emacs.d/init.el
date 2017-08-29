@@ -86,9 +86,8 @@
 (powerline-center-theme)
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
-(if window-system (load-theme 'green-phosphor t))
-(if (not window-system)
-    (progn (load-theme 'base16-default-dark t)))
+(add-to-list 'load-path "~/.emacs.d/elisp/themes")
+(load "green-phosphor-theme.el")
 
 ;; ---- ---- auto-complete ---- ---- ;;
 (ac-config-default)
