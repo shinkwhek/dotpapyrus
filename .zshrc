@@ -13,6 +13,13 @@ zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
 # Disable updates using the "frozen" tag
 zplug "k4rthik/git-cal", as:command, frozen:1
 
+# zsh syntax highlight
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+antigen bundle zsh-users/zsh-syntax-highlighting
+zgen load zsh-users/zsh-syntax-highlighting
+
+
+
 # Grab binaries from GitHub Releases
 # and rename with the "rename-to:" tag
 zplug "junegunn/fzf-bin", \
