@@ -12,7 +12,7 @@
 (let ((ws system-type))
   (cond
     ((equal ws 'w32)    (add-to-list 'default-frame-alist '(font . "Consolas")))
-    ((equal ws 'ns)     (add-to-list 'default-frame-alist '(font . "Consolas")))
+    ((equal ws 'ns)     (add-to-list 'default-frame-alist '(font . "ricty-16")))
     ((equal ws 'darwin) (add-to-list 'default-frame-alist '(font . "ricty-16")))))
 
 ;; --- --- current line highlighted --- --- ;;
@@ -87,7 +87,7 @@
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
 (add-to-list 'load-path "~/.emacs.d/elisp/themes")
-(load "green-phosphor-theme.el")
+(load-theme #'rebecca t)
 
 ;; ---- ---- auto-complete ---- ---- ;;
 (ac-config-default)
@@ -136,6 +136,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("4e4d9f6e1f5b50805478c5630be80cce40bee4e640077e1a6a7c78490765b03f" default)))
  '(package-selected-packages (quote (powerline rainbow-delimiters helm auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
