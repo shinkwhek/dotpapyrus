@@ -1,3 +1,3 @@
 [submodule ".emacs.d/elisp/themes"]
-	path = .emacs.d/elisp/themes
-	url = https://github.com/shinkwhek/emacs-color-theme-green-phosphor/tree/shinkwhek
+	path = .emacs.d/lisp/PG
+	url = https://github.com/ProofGeneral/PG
