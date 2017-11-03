@@ -53,7 +53,7 @@
 (setq auto-save-default nil)
 
 ;;; === === === Package === === === ;;;
-(add-to-list 'load-path "~/.emacs.d/funs")
+(add-to-list 'load-path "~/.emacs.d/funs/")
 (require 'shkw)
 (require 'shkw-latex)
 (require 'shkw-ocaml)

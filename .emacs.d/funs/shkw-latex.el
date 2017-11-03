@@ -40,11 +40,11 @@
      (1 'shkw-expand-color t))
     ("\\(\\\\\\(?:begin\\|end\\)\\)\\>"
      (1 'shkw-env-color t))
-    ("\\(\\\\\\(?:def\\|if\\|else\\|or\\|fi\\|let\\|advance\\|multiply\\|newcount\\|newdimen\\|newskip\\|newtoks\\|newif\\|gdef\\|global\\)\\)\\>"
+    ("\\(\\\\\\(?:def\\|if\\|else\\|or\\|fi\\|let\\|advance\\|multiply\\|\\(\\(re\\)*\\(newcommand\\|newenvironment\\)\\)\\|providecommand\\|newcount\\|newdimen\\|newskip\\|newtoks\\|newif\\|gdef\\|global\\)\\)\\>"
      (1 'shkw-special-spell-color t))
     ("\\(\\\\\\(?:makeatletter\\|makeatother\\)\\)\\>"
      (1 'shkw-makeatletter-color t)))
-  '(".+\\.\\(tex\\|sty\\)")
+  '(".+\\.\\(tex\\|sty\\|ltx\\)")
   '((lambda ()
       (progn
 	(use-local-map shkw-latex-mode-map)
