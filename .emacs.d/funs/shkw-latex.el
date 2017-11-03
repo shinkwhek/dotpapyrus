@@ -15,19 +15,19 @@
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
 (defface shkw-spell-color
-  '((t (:foreground "#3e55c9" :background "#000000")))
+  '((t (:foreground "#3e55c9" :weight bold)))
   "general")
 (defface shkw-expand-color
-  '((t (:foreground "#d8502b" :background "#353d68" :weight bold)))
+  '((t (:foreground "#b3006d" :background "#000000" :weight bold)))
   "expand")
 (defface shkw-env-color
-  '((t (:foreground "#ff0090" :background "#f2f2f2")))
+  '((t (:foreground "#ff0090" :weight bold)))
   "environment")
 (defface shkw-special-spell-color
-  '((t (:foreground "#01a525" :background "#f2f2f2")))
+  '((t (:foreground "#01a525" :weight bold)))
   "special-spell")
 (defface shkw-makeatletter-color
-  '((t (:foreground "#d000ff" :background "#f2f2f2")))
+  '((t (:foreground "#d000ff" :background "#013307" :weight bold)))
   "make-at")
 
 ;; ==== ==== ==== Map ==== ==== ==== ;;
