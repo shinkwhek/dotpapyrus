@@ -15,10 +15,10 @@
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
 (defface shkw-spell-color
-  '((t (:foreground "#ff6100" :background "#f2f2f2")))
+  '((t (:foreground "#3e55c9" :background "#000000")))
   "general")
 (defface shkw-expand-color
-  '((t (:foreground "#ff0000" :background "#f2f2f2" :weight bold)))
+  '((t (:foreground "#d8502b" :background "#353d68" :weight bold)))
   "expand")
 (defface shkw-env-color
   '((t (:foreground "#ff0090" :background "#f2f2f2")))
