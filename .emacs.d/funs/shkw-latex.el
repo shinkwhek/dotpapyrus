@@ -15,7 +15,7 @@
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
 (defface shkw-spell-color
-  '((t (:foreground "#3e55c9" :weight bold)))
+  '((t (:foreground "#3687c9" :weight bold)))
   "general")
 (defface shkw-expand-color
   '((t (:foreground "#b3006d" :background "#000000" :weight bold)))
