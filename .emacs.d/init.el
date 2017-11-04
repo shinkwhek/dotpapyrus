@@ -22,7 +22,7 @@
 (blink-cursor-mode 0)
 
 ;; ---- ---- indent ---- ---- ;;
-(setq tab-width 2)
+(setq-default tab-width 2 indent-tabs-mode nil)
 
 ;; --- --- back --- --- ;;
 (define-key global-map [?¥] [?\\])
