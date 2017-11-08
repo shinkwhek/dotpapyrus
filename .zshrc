@@ -14,19 +14,8 @@ zplug "Jxck/dotfiles", as:command, use:"bin/{histuniq,color}"
 zplug "k4rthik/git-cal", as:command, frozen:1
 
 # zsh syntax highlight
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
-antigen bundle zsh-users/zsh-syntax-highlighting
-zgen load zsh-users/zsh-syntax-highlighting
-
-
-
-# Grab binaries from GitHub Releases
-# and rename with the "rename-to:" tag
-zplug "junegunn/fzf-bin", \
-    from:gh-r, \
-    as:command, \
-    rename-to:fzf, \
-    use:"*darwin*amd64*"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+ 
 
 # Supports checking out a specific branch/tag/commit
 zplug "b4b4r07/enhancd", at:v1
