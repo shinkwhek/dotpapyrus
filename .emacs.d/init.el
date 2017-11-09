@@ -87,7 +87,7 @@
 
 ;; ==== ==== ==== Color ==== ==== ==== ;;
 (add-to-list 'load-path "~/.emacs.d/elisp/themes")
-(load-theme #'rebecca t)
+(load-theme #'whiteboard t)
 
 ;; ---- ---- auto-complete ---- ---- ;;
 (ac-config-default)
