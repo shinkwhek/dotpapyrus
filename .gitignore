@@ -1,2 +1,2 @@
 *.elc
-./nvim/.vim/*
+nvim/.vim/
