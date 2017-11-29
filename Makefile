@@ -1,19 +1,32 @@
-
+DOTPATH    := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+CANDIDATES := $(wildcard .??*) bin
+EXCLUSIONS := .DS_Store .git .gitmodules .gitignore
+DOTFILES   := $(filter-out $(EXCLUSIONS), $(CANDIDATES))
 ZSHRC = .zshrc
 EMACS = .emacs.d
 VIM   = .vimrc
 
 all:
-	make install
 
-install: Makefile
-	make zsh
-	make vim
-	make emacs
+list: ## Show dot files in this repo
+	@$(foreach val, $(DOTFILES), /bin/ls -dF $(val);)
 
-zsh_update: $(ZSHRC)
-	echo -e "\e[31;1;4mset zshrc\e[m"
-	cp ./$(ZSHRC) ~/
+deploy: ## Create symlink to home directory
+	@echo '==> Start to deploy dotfiles to home directory.'
+	@echo ''
+	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
+
+init: ## Setup environment settings
+	@DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/init/init.sh
+
+install: deploy init ## Run make, deploy, init
+	@exec $$SHELL
+
+clean: ## Remove the dot files and this repo
+	@echo 'Remove dot files in your home directory...'
+	@-$(foreach val, $(DOTFILES), rm -vrf $(HOME)/$(val);)
+	-rm -rf $(DOTPATH)
+
 
 zsh: Makefile $(ZSHRC)
 	make zsh_update
@@ -30,12 +43,7 @@ emacs_update: $(EMACS)
 emacs: Makefile $(EMACS)
 	make emacs_update
 
-vim_update: $(VIM)
-	echo -e "\e[31;1;4mset vimrc\e[m"
-	cp ./$(VIM) ~/
-
-vim: Makefile $(VIM)
-	make vim_update
+vim: Makefile
 	echo -e "\e[31;1mcreate ~/.vim/bundle\e[m"
 	mkdir -p ~/.vim/bundle
 	echo -e "\e[32;1mInstall\e[m \e[37;1;4mdein\e[m"
@@ -43,8 +51,6 @@ vim: Makefile $(VIM)
 	sh ./installer.sh ~/.vim/bundle
 	echo -e "\e[36;1mClean~~~\e[m"
 	rm ./installer.sh
-
-update: zsh_update emacs_update vim_update
 
 
 PHONY: all zsh emacs vim install update purge emacs_update_init_el

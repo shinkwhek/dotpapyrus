@@ -51,3 +51,4 @@ alias gcm='git commit'
 alias nyao='git'
 alias oppai='git'
 
+eval "$(pyenv init -)"
