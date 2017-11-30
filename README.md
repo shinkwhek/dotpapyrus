@@ -18,8 +18,7 @@ or
 $ bash -c "$(wget -qO - https://raw.githubusercontent.com/shinkwhek/dotpapyrus/master/etc/install.sh)"
 ```
 
-2.
-```$ make install```
+2. ```$ make install```
 
 
 ## Update
