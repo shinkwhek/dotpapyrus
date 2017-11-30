@@ -6,12 +6,24 @@ papyrus...? :skull: :skull: :skull: :skull: :skull:
 
 ## Installation
 
-1. bash 
+1. two best ways
 
-2. make install
+```
+$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/shinkwhek/dotpapyrus/master/etc/install.sh)"
+```
+
+or
+
+```
+$ bash -c "$(wget -qO - https://raw.githubusercontent.com/shinkwhek/dotpapyrus/master/etc/install.sh)"
+```
+
+2.
+```$ make install```
 
 
 ## Update
 
-make update
-
+```
+$ make update
+```
