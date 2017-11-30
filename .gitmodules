@@ -1,3 +1,0 @@
-[submodule ".emacs.d/elisp/themes"]
-	path = .emacs.d/lisp/PG
-	url = https://github.com/ProofGeneral/PG
