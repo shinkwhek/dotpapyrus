@@ -177,21 +177,30 @@ is_number() {
 # zplug
 e_header "zplug installing"
 if [ -e ${HOME}/.zplug ]; then
+  e_newline
   e_arrow "zplug is already installed."
 else
+  e_newline
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
   e_success "zplug"
 fi
+e_newline
 log_pass "zplug"
 
+e_newline
+e_newline
 # dein.vim
 e_header "dein.vim installing"
 if [ -e ${HOME}/.vim/bundles ]; then
+  e_newline
   e_arrow "dein.vim is already installed."
 else
+  mkdir -p ${HOME}/.vim/bundles
   curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
   sh ./installer.sh ~/.vim/bundles
   rm ./installer.sh
+  e_newline
   e_success "dein.vim"
 fi
+e_newline
 log_pass "dein.vim"
