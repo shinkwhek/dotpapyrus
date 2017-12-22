@@ -180,7 +180,6 @@ if [[ -d ${HOME}/.zplug ]]; then
   e_newline
   e_arrow "zplug is already installed."
 else
-  e_newline
   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
   e_success "zplug"
 fi
