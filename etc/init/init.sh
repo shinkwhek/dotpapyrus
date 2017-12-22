@@ -176,7 +176,7 @@ is_number() {
 
 # zplug
 e_header "zplug installing"
-if [ -e ${HOME}/.zplug ]; then
+if [[ -d ${HOME}/.zplug ]]; then
   e_newline
   e_arrow "zplug is already installed."
 else
@@ -191,7 +191,7 @@ e_newline
 e_newline
 # dein.vim
 e_header "dein.vim installing"
-if [ -e ${HOME}/.vim/bundles ]; then
+if [ -d ${HOME}/.vim/bundles ]; then
   e_newline
   e_arrow "dein.vim is already installed."
 else
