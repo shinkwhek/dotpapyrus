@@ -22,6 +22,7 @@ if dein#load_state('~/.vim/bundles')
   call dein#add('Shougo/vinarise.vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('mattn/emmet-vim')  
+  call dein#add('rust-lang/rust.vim')
 
 
   " Required:
