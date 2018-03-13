@@ -44,6 +44,10 @@ syntax on
 filetype plugin indent on
 syntax enable
 
+" ==== ==== Colour Theme ==== ====
+set background=dark
+colorscheme hybrid
+
 " ==== ==== neocomplete ==== ====
 let g:neocomplete#enable_at_startup = 1
 
