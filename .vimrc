@@ -23,6 +23,7 @@ if dein#load_state('~/.vim/bundles')
   call dein#add('vim-airline/vim-airline')
   call dein#add('mattn/emmet-vim')  
   call dein#add('rust-lang/rust.vim')
+  call dein#add('racer-rust/vim-racer')
 
 
   " Required:
@@ -77,7 +78,8 @@ execute "set rtp+=" . g:opamshare . "/merlin/vim"
 " for Rust
 " ---- rustfmt
 let g:rustfmt_autosave = 1
-let g:rustfmt_command = $HOME . '/.cargo/bin/rustfmt'
+let g:rustfmt_command = '$HOME/.cargo/bin/rustfmt'
 " ---- racer
 set hidden
-let g:racer_cmd = $HOME . '/.cargo/bin/racer'
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let $RUST_SRC_PATH = "/usr/local/src/rustc-1.5.0/src"
