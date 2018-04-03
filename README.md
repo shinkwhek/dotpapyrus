@@ -9,13 +9,13 @@ papyrus...? :skull: :skull: :skull: :skull: :skull:
 1. two best ways
 
 ```
-$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/shinkwhek/dotpapyrus/master/etc/install.sh)"
+$ bash -c "$(curl -fsSL https://git.io/dotpapyrus)"
 ```
 
 or
 
 ```
-$ bash -c "$(wget -qO - https://raw.githubusercontent.com/shinkwhek/dotpapyrus/master/etc/install.sh)"
+$ bash -c "$(wget -qO - https://git.io/dotpapyrus)"
 ```
 
 2. ```$ make install```
