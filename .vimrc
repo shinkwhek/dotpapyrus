@@ -54,6 +54,11 @@ colorscheme hybrid
 let g:neocomplete#enable_at_startup = 1
 
 " ==== ==== ==== BASIC ==== ==== ====
+" Encoding
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,udf-8
+set fileformats=unix,dos,mac
+
 " indent
 set expandtab
 set tabstop=2
