@@ -17,7 +17,7 @@ if dein#load_state('~/.vim/bundles')
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('w0ng/vim-hybrid')
+  call dein#add('cocopon/iceberg.vim')
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('Shougo/vinarise.vim')
   call dein#add('vim-airline/vim-airline')
@@ -48,7 +48,7 @@ syntax enable
 
 " ==== ==== Colour Theme ==== ====
 set background=dark
-colorscheme hybrid
+colorscheme iceberg
 
 " ==== ==== neocomplete ==== ====
 let g:neocomplete#enable_at_startup = 1
