@@ -13,8 +13,9 @@ zplug "k4rthik/git-cal", as:command, frozen:1
 zplug "b4b4r07/enhancd", at:v1
 zplug "mollifier/anyframe", at:4c23cb60
 # Load theme file
-zplug 'oskarkrawczyk/honukai-iterm-zsh', as:theme
-
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+autoload -U promptinit; promptoinit
+prompt spaceship
 
 # Can manage local plugins
 zplug "~/.zsh", from:local
