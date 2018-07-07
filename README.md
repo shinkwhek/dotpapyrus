@@ -26,3 +26,7 @@ $ bash -c "$(wget -qO - https://git.io/dotpapyrus)"
 ```
 $ make update
 ```
+
+<div style="text-align:center;">
+<img src="https://raw.githubusercontent.com/shinkwhek/picsreadme/master/anime/odoru.gif" width=90%>
+</div>
