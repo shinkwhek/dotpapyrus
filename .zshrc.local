@@ -1,7 +1,7 @@
 # Base
 export LANG=en_US.UTF-8
 
-setopt corrent
+setopt correct
 setopt no_beep
 
 # Plugin
