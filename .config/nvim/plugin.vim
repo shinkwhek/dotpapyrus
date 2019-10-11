@@ -13,7 +13,6 @@ function! s:setupPlug()
     Plug 'roxma/nvim-yarp'
     Plug 'roxma/vim-hug-neovim-rpc'
   endif
-
   " Binary
   Plug 'Shougo/vinarise.vim'
   " Airline
