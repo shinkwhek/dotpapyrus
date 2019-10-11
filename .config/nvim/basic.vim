@@ -37,3 +37,4 @@ set noerrorbells
 set novisualbell
 set ffs=unix,dos,mac
 
+set hidden
