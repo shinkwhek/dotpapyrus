@@ -49,6 +49,10 @@ function! s:setup()
   set background=light
   colorscheme PaperColor
 
+  highlight! Normal ctermbg=NONE guibg=NONE
+  highlight! NonText ctermbg=NONE guibg=NONE
+  highlight! LineNr ctermbg=NONE guibg=NONE
+
   " ---- ---- airline ---- ----
   let g:airline_theme='papercolor'
 
