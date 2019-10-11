@@ -4,7 +4,7 @@ function! s:setupPlug()
   call plug#begin('~/.vim/plugged')
 
   " Theme
-  Plug 'altercation/vim-colors-solarized'
+  Plug 'NLKNguyen/papercolor-theme'
   " Deoplete
   if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -17,6 +17,7 @@ function! s:setupPlug()
   Plug 'Shougo/vinarise.vim'
   " Airline
   Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   " LanguageClient
   Plug 'autozimu/LanguageClient-neovim', { 
         \ 'branch': 'next',
@@ -44,8 +45,12 @@ function! s:setup()
   syntax on
   filetype plugin on
   filetype indent on
+  set t_Co=256   " This is may or may not needed.
   set background=light
-  colorscheme solarized
+  colorscheme PaperColor
+
+  " ---- ---- airline ---- ----
+  let g:airline_theme='papercolor'
 
   " ---- ---- deoplete ---- ----
   let g:deoplete#enable_at_startup = 1
