@@ -4,7 +4,7 @@ function! s:setupPlug()
   call plug#begin('~/.vim/plugged')
 
   " Theme
-  Plug 'cocopon/iceberg.vim'
+  Plug 'altercation/vim-colors-solarized'
   " Deoplete
   if has('nvim')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -44,8 +44,8 @@ function! s:setup()
   syntax on
   filetype plugin on
   filetype indent on
-  set background=dark
-  colorscheme iceberg
+  set background=light
+  colorscheme solarized
 
   " ---- ---- deoplete ---- ----
   let g:deoplete#enable_at_startup = 1
