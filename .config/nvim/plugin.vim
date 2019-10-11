@@ -81,6 +81,20 @@ function! s:languageclient()
   let g:fsharp#fsharp_interactive_command = "fsharpi"
 endfunction
 
+" ---- ---- Ionide ---- ----
+function s:setLSPShortcuts()
+  nnoremap <silent> xd :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <silent> xn :call LanguageClient#textDocument_rename()<CR>
+  nnoremap <silent> xf :call LanguageClient#textDocument_formatting()<CR>
+  nnoremap <silent> xt :call LanguageClient#textDocument_typeDefinition()<CR>
+  nnoremap <silent> xr :call LanguageClient#textDocument_references()<CR>
+  nnoremap <silent> xh :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <silent> xs :call LanguageClient#textDocument_documentSymbol()<CR>
+  nnoremap <silent> xa :call LanguageClient#textDocument_codeAction()<CR>
+  nnoremap <silent> xx :call LanguageClient_contextMenu()<CR>
+endfunction()
+
+
 " ---- ---- Do ---- ----
 
 call s:setupPlug()
@@ -88,3 +102,5 @@ call s:setupPlug()
 call s:setup()
 
 call s:languageclient()
+
+call s:setLSPShortcuts()
