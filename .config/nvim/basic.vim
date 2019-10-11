@@ -28,7 +28,6 @@ set incsearch
 " show
 set showmatch
 
-
 set ruler " show corrent position
 set number
 set cmdheight=2
