@@ -228,24 +228,23 @@ dotfiles_deploy() {
     exit 1
   fi
 
+  if [ ! -d ~/.config ]; then
+    log_echo "create ~/.config"
+    mkdir -p ~/.config
+  fi
+
   cd "$DOTPATH"
-  make deploy
+
+  ln -s ".config/nvim" "~/.config/nvim"
+  log_echo "[x]: nvim/"
+
   e_newline && e_done "Deploy"
 }
 
 dotfiles_initialize() {
   e_newline
   e_header "Initializing dotfiles..."
-  if [ -f Makefile ]; then
-    #DOTPATH="$(dotpath)"
-    #export DOTPATH
-    #bash "$DOTPATH"/etc/init/init.sh
-    make init
-  else
-    log_fail "Makefile: not found"
-    exit 1
-  fi &&
-    e_newline && e_done "Initialize"
+  e_newline && e_done "Initialize"
 }
 
 # A script for the file named "install"
@@ -270,6 +269,6 @@ if [ -n "${BASH_EXECUTION_STRING:-}" ] || [ -p /dev/stdin ]; then
   else
     e_newline
     e_arrow "Restarting your shell..."
-    exec "${SHELL:-/bin/zsh}"
+    exec "${SHELL:-/bin/fish}"
   fi
 fi

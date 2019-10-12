@@ -2,6 +2,14 @@
 
  :skull: :skull: :skull: :skull: :skull:
 
+## Require
+
++ NeoVim
+
++ VimPlug
+
++ .NET Core SDK
+
 ## Installation
 
 1. two best ways
