@@ -235,7 +235,7 @@ dotfiles_deploy() {
 
   cd "$DOTPATH"
 
-  ln -s ".config/nvim" "~/.config/nvim"
+  ln -s ".config/nvim/" "~/.config/nvim"
   log_echo "[x]: nvim/"
 
   e_newline && e_done "Deploy"
