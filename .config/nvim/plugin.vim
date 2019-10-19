@@ -64,6 +64,7 @@ endfunction
 " ---- ---- Language Client ---- ----
 function! s:languageclient()
   let g:LanguageClient_serverCommands = {
+    \ 'cpp': ['clangd'],
     \ 'fsharp': g:fsharp#languageserver_command
     \ }
   nnoremap <F5> :call LanguageClient_contextMenu()<CR>
