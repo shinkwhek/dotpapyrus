@@ -35,6 +35,8 @@ function! s:setupPlug()
   Plug 'racer-rust/vim-racer'
   " SATySFi
   Plug 'qnighy/satysfi.vim'
+  " Golang
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
   call plug#end()
 endfunction
@@ -65,13 +67,11 @@ endfunction
 function! s:languageclient()
   let g:LanguageClient_serverCommands = {
     \ 'cpp': ['clangd'],
+    \ 'c': ['clangd'],
+    \ 'go': ['gopls'],
     \ 'fsharp': g:fsharp#languageserver_command
     \ }
-  nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-  " Or map each action separately
-  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+  " -- -- FSharp
   if has('nvim') && exists('*nvim_open_win')
     set updatetime=1000
     augroup FSharpShowTooltip
@@ -80,6 +80,19 @@ function! s:languageclient()
     augroup END
   endif
   let g:fsharp#fsharp_interactive_command = "fsharpi"
+endfunction
+
+" ---- ---- vim-go ---- ----
+function s:setVimGoOption()
+  let g:go_term_mode = "split"
+  let g:go_fmt_command = "goimports"
+  let g:go_addtags_transform = "camelcase"
+  let g:go_metalinter_autosave = 1
+  let g:go_auto_type_info = 1
+  autocmd FileType go set updatetime = 100
+  let g:go_play_open_browser = 0
+  let g:go_def_mapping_enabled = 0
+  let g:go_doc_keywordprg_enabled = 0
 endfunction
 
 " ---- ---- Ionide ---- ----
@@ -95,7 +108,6 @@ function s:setLSPShortcuts()
   nnoremap <silent> xx :call LanguageClient_contextMenu()<CR>
 endfunction()
 
-
 " ---- ---- Do ---- ----
 
 call s:setupPlug()
@@ -103,5 +115,6 @@ call s:setupPlug()
 call s:setup()
 
 call s:languageclient()
-
 call s:setLSPShortcuts()
+
+call s:setVimGoOption()
