@@ -15,6 +15,9 @@ function! s:setupPlug()
   endif
   " Binary
   Plug 'Shougo/vinarise.vim'
+  " Snipet
+  Plug 'Shougo/neosnippet.vim'
+  Plug 'Shougo/neosnippet-snippets'
   " Airline
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -69,7 +72,8 @@ function! s:languageclient()
     \ 'cpp': ['clangd'],
     \ 'c': ['clangd'],
     \ 'go': ['gopls'],
-    \ 'fsharp': g:fsharp#languageserver_command
+    \ 'fsharp': g:fsharp#languageserver_command,
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
   " -- -- FSharp
   if has('nvim') && exists('*nvim_open_win')
@@ -80,6 +84,9 @@ function! s:languageclient()
     augroup END
   endif
   let g:fsharp#fsharp_interactive_command = "fsharpi"
+  " -- -- Rust
+  let g:rustfmt_autosave = 1
+
 endfunction
 
 " ---- ---- vim-go ---- ----
